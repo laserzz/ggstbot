@@ -96,14 +96,14 @@ class GGSTWebScraper:
             }
 
     # requires get_player_char_page_data
-    def get_matchup_stats(self, data: list[bs4.element.Tag]) -> list[MatchupStats]:
-        stats = []
+    def get_matchup_stats(self, data: list[bs4.element.Tag]) -> set[MatchupStats]:
+        stats = set()
         for e in data:
             if e == data[0]:
                 continue
             if e.contents[1].get_text(strip=True) == "Overall":
                 continue
-            stats.append(
+            stats.add(
                 {
                     "character": e.contents[1].get_text(strip=True),
                     "matches": int(e.contents[3].get_text(strip=True)),
