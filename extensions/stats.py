@@ -9,7 +9,7 @@ plugin = lightbulb.Plugin("Stats")
 @plugin.command
 @lightbulb.option("character", "GGST Character", str, required=True)
 @lightbulb.option("user", "GGST user", str, required=True)
-@lightbulb.add_cooldown(600, 1, lightbulb.UserBucket)
+@lightbulb.add_cooldown(180, 1, lightbulb.UserBucket)
 @lightbulb.command("elo", "see elo for a character", pass_options=True, auto_defer=True)
 @lightbulb.implements(lightbulb.SlashCommand)
 async def elo(ctx: lightbulb.SlashContext, user: str, character: str):
@@ -34,7 +34,7 @@ async def elo(ctx: lightbulb.SlashContext, user: str, character: str):
 @plugin.command
 @lightbulb.option("character", "GGST Character", str, required=True)
 @lightbulb.option("user", "GGST user", str, required=True)
-@lightbulb.add_cooldown(600, 1, lightbulb.UserBucket)
+@lightbulb.add_cooldown(180, 1, lightbulb.UserBucket)
 @lightbulb.command(
     "matchups", "see your matchup stats", pass_options=True, auto_defer=True
 )
